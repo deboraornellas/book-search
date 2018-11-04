@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { BookService } from '../book.service'
+
 @Component({
   selector: 'app-book-form',
   templateUrl: './book-form.component.html',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private bookService: BookService
+  ) { }
 
   ngOnInit() {
+  }
+
+  onSubmit() {
+    console.log("onSubmit");
+    this.bookService.get().subscribe();
   }
 
 }
