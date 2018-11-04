@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./book.component.css']
 })
 export class BookComponent implements OnInit {
-
+  book = {
+    name: "Harry Potter",
+    author: "J.K Rowling"
+  };
   constructor() { }
 
   ngOnInit() {
