@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-
+import {FormGroup, FormControl} from '@angular/forms'
 import { BookService } from '../book.service'
 
 @Component({
@@ -8,19 +8,22 @@ import { BookService } from '../book.service'
   styleUrls: ['./book-form.component.css']
 })
 export class BookFormComponent implements OnInit {
-
+  form;
   @Output() search = new EventEmitter();
 
   constructor(
-    private bookService: BookService
+    
   ) { }
 
   ngOnInit() {
+    this.form = new FormGroup({
+      name: new FormControl() 
+    });
   }
 
-  onSubmit() {
-    console.log("onSubmit");
-    this.search.emit("Tolkien");
+  onSubmit(book) {
+    console.log(book.get('name').value);
+    this.search.emit(book);
   }
 
 }

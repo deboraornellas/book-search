@@ -9,15 +9,16 @@ import { BookService } from './book.service';
 })
 export class AppComponent {
   title = 'Book Search';
+  bookList = [];
 
   constructor(
     private bookService: BookService
   ) { }
 
   onSearch(book) {
-    this.bookService.get(book)
-      .subscribe(booklist => {
-        console.log(booklist);
+    this.bookService.get(book.get('name').value)
+      .subscribe(bookList => {
+        console.log(bookList);
       });
   }
 }
