@@ -9,9 +9,9 @@ export class BookService {
 
   constructor(private http: Http) {}
 
-  get() {
+  get(name) {
     let searchParams = new URLSearchParams();
-    searchParams.append('search', 'Tolkien');
+    searchParams.append('search', name);
     searchParams.append('max', '2');
     return this.http.get('https://reststop.randomhouse.com/resources/titles', { search: searchParams });
   }

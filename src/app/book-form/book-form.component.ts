@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { BookService } from '../book.service'
 
@@ -9,6 +9,8 @@ import { BookService } from '../book.service'
 })
 export class BookFormComponent implements OnInit {
 
+  @Output() search = new EventEmitter();
+
   constructor(
     private bookService: BookService
   ) { }
@@ -18,7 +20,7 @@ export class BookFormComponent implements OnInit {
 
   onSubmit() {
     console.log("onSubmit");
-    this.bookService.get().subscribe();
+    this.search.emit("Tolkien");
   }
 
 }
