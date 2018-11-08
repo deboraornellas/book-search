@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 import { BookService } from './book.service';
 
@@ -8,17 +8,22 @@ import { BookService } from './book.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  //@Output() publish = new EventEmitter();
   title = 'Book Search';
-  bookList = [];
+  bookList;
 
   constructor(
     private bookService: BookService
   ) { }
 
-  onSearch(book) {
-    this.bookService.get(book.get('name').value)
-      .subscribe(bookList => {
-        console.log(bookList);
-      });
+  onInit(){
+  }
+
+  onSearch(bookName) {
+    this.bookService.get(bookName.get('name').value)
+    .subscribe(bookList => {
+    this.bookList = bookList.title;
+    console.log(this.bookList);
+    console.log(bookList.title[0].author)});
   }
 }

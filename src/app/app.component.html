@@ -5,7 +5,8 @@
   </h1>
   <app-book-form
     (search)="onSearch($event)"></app-book-form>
-  <app-book-list></app-book-list>
+  <app-book-list
+  [books]="bookList"></app-book-list>
 </div>
 
 

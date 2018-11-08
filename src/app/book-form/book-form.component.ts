@@ -1,6 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import {FormGroup, FormControl} from '@angular/forms'
-import { BookService } from '../book.service'
+import { FormGroup, FormControl } from '@angular/forms'
 
 @Component({
   selector: 'app-book-form',
@@ -22,7 +21,6 @@ export class BookFormComponent implements OnInit {
   }
 
   onSubmit(book) {
-    console.log(book.get('name').value);
     this.search.emit(book);
   }
 
