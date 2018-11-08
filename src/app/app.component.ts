@@ -24,6 +24,6 @@ export class AppComponent {
     .subscribe(bookList => {
     this.bookList = bookList.title;
     console.log(this.bookList);
-    console.log(bookList.title[0].author)});
+    });
   }
 }
