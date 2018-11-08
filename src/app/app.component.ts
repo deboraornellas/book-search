@@ -8,9 +8,6 @@ import { BookService } from './book.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  //@Output() publish = new EventEmitter();
-  title = 'Book Search';
-  bookList;
 
   constructor(
     private bookService: BookService
@@ -19,11 +16,4 @@ export class AppComponent {
   onInit(){
   }
 
-  onSearch(bookName) {
-    this.bookService.get(bookName.get('name').value)
-    .subscribe(bookList => {
-    this.bookList = bookList.title;
-    console.log(this.bookList);
-    });
-  }
 }

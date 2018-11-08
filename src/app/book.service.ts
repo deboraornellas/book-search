@@ -12,10 +12,9 @@ export class BookService {
     let params = new HttpParams();
     params = params.append('search', name);
     params = params.append('max', '5');
-    let data = this.http.get('https://reststop.randomhouse.com/resources/titles', { params: params});
     return this.http.get('https://reststop.randomhouse.com/resources/titles', { params: params , responseType: "json"}).pipe(map(
-      (test: Response) => {
-        return JSON.parse(JSON.stringify(test));
+      (response: Response) => {
+        return JSON.parse(JSON.stringify(response));
       }));
   }
 }
