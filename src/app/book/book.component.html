@@ -1,5 +1,8 @@
 <!-- <p>{{book.name}}</p>
 <p>{{book.author}}</p> -->
-<p>Title: {{book.titleweb}}</p>
-<p>Author: {{book.author}}</p>
+<p>
+    <b>Title:</b> {{book.titleweb}}
+    <i *ngIf="book.subtitle != null">: {{book.subtitle}}</i>
+</p>
+<p><b>Author:</b> {{book.authorweb}}</p> 
 

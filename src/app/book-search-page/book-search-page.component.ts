@@ -23,5 +23,4 @@ export class BookSearchPageComponent implements OnInit {
       console.log(this.bookList);
     });
   }
-
 }
