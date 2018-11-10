@@ -17,4 +17,13 @@ export class BookService {
         return JSON.parse(JSON.stringify(response));
       }));
   }
+
+  getISBN(isbn) {
+    var url = 'https://reststop.randomhouse.com/resources/titles/' + isbn;
+    console.log(url);
+    return this.http.get(url, { responseType: "json"}).pipe(map(
+      (response: Response) => {
+        return JSON.parse(JSON.stringify(response));
+      }));
+  }
 }

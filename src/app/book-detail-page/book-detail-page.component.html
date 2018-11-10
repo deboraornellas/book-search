@@ -1,3 +1,15 @@
-<p>
-  book-detail-page works!
-</p>
+<div 
+  [book]="book"
+  style="text-align:center">
+    <h1>
+      Book Details - ISBN: {{ bookISBN }}
+    </h1>
+    <p>
+        <b>Title:</b> {{book.titleweb}}
+        <i *ngIf="book && book.subtitle">: {{book.subtitle}}</i>
+    </p>
+    <p><b>Description:</b> {{book.flapcopy}}</p> 
+    <p><b>Author:</b> {{book.authorweb}}</p> 
+    <p><b>Author Bio:</b> {{book.authorbio}}</p> 
+</div>
+  

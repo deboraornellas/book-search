@@ -5,4 +5,4 @@
     <i *ngIf="book.subtitle != null">: {{book.subtitle}}</i>
 </p>
 <p><b>Author:</b> {{book.authorweb}}</p> 
-
+<a [routerLink]="['/isbn', book.isbn]"> Details </a>
