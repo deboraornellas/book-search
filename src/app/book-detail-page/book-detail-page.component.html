@@ -2,6 +2,7 @@
     <h1>
       Book Details - ISBN: {{ bookISBN }}
     </h1>
+    <a routerLink="/search"> Return </a>
     <p>
         <b>Title:</b> {{book.titleweb}}
         <i *ngIf="book && book.subtitle">: {{book.subtitle}}</i>
