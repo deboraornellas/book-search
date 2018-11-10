@@ -31,10 +31,7 @@ export class BookDetailPageComponent implements OnInit {
     this.bookService.getISBN(bookISBN)
     .subscribe(bookData => {
       this.book = bookData;
-      // if (typeof (this.book.subtitle) == 'undefined') {
-      //   this.book.subtitle = "-1";
-      // }
-      console.log(this.book.subtitle);
+      //console.log(this.book.subtitle);
     });
   }
 }

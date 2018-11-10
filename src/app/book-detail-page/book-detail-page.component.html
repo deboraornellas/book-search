@@ -4,11 +4,11 @@
     </h1>
     <a routerLink="/search"> Return </a>
     <p>
-        <b>Title:</b> {{book.titleweb}}
-        <i *ngIf="book && book.subtitle">: {{book.subtitle}}</i>
+        <b>Title:</b> {{book?.titleweb}}
+        <i *ngIf="book && book.subtitle">: {{book?.subtitle}}</i>
     </p>
-    <p><b>Description:</b> {{book.flapcopy}}</p> 
-    <p><b>Author:</b> {{book.authorweb}}</p> 
-    <p><b>Author Bio:</b> {{book.authorbio}}</p> 
+    <p><b>Description:</b> {{book?.flapcopy}}</p> 
+    <p><b>Author:</b> {{book?.authorweb}}</p> 
+    <p><b>Author Bio:</b> {{book?.authorbio}}</p> 
 </div>
   
